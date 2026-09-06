@@ -3,7 +3,7 @@
 > ### 🍴 本仓库为 Fork（二次开发用）
 >
 > - **上游**：[zoij1033/fenbi-print](https://github.com/zoij1033/fenbi-print)（MIT License，原作者 zoij1033）。本仓库 fork 自上游，用于在原作者基础上的二次开发。
-> - **基线**：上游 v1.8.8 @ commit `59d3216`（2026-09-02）逐字节导入，见本仓库首个 commit（`694b871`）。
+> - **基线**：上游 v1.8.8 @ commit `59d3216`（2026-09-02）。本仓库历史接续在上游 commit 之上（首个本地提交即「fork 定制」），因此 GitHub 上可直接与上游 diff、日后同步无冲突。
 > - **更新源已指向本仓库**：脚本内「检查更新 / 立即更新」与说明页（`index.html`）的小书签、安装按钮均指向 `rustfover/fenbi-print`；若需改回上游或再 fork，替换 `fenbi-print.user.js` 中 `GH_API` / `UPDATE_FB_URL` 与 `index.html` 内嵌地址即可。
 > - **与上游同步**：`git remote add upstream https://github.com/zoij1033/fenbi-print.git` 后，用 `git fetch upstream && git merge upstream/main` 拉取作者更新。
 > - **范围说明**：公开仓库仅收录上游发布的核心文件（脚本、说明页、README、LICENSE）。README 下文「目录」「分发给别人用」章节提到的 `build.js`、`dist/`、`install.html`、`version.json`、示例卷等构建/发行辅助文件**未包含在仓库内**（上游公开仓库亦未收录），需要时请自行重建或联系作者获取。
