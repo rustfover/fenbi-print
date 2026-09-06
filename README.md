@@ -1,5 +1,12 @@
-[README.md](https://github.com/user-attachments/files/31625732/README.md)
 # 粉笔试卷排版打印
+
+> ### 🍴 本仓库为 Fork（二次开发用）
+>
+> - **上游**：[zoij1033/fenbi-print](https://github.com/zoij1033/fenbi-print)（MIT License，原作者 zoij1033）。本仓库 fork 自上游，用于在原作者基础上的二次开发。
+> - **基线**：上游 v1.8.8 @ commit `59d3216`（2026-09-02）逐字节导入，见本仓库首个 commit（`694b871`）。
+> - **更新源已指向本仓库**：脚本内「检查更新 / 立即更新」与说明页（`index.html`）的小书签、安装按钮均指向 `rustfover/fenbi-print`；若需改回上游或再 fork，替换 `fenbi-print.user.js` 中 `GH_API` / `UPDATE_FB_URL` 与 `index.html` 内嵌地址即可。
+> - **与上游同步**：`git remote add upstream https://github.com/zoij1033/fenbi-print.git` 后，用 `git fetch upstream && git merge upstream/main` 拉取作者更新。
+> - **范围说明**：公开仓库仅收录上游发布的核心文件（脚本、说明页、README、LICENSE）。README 下文「目录」「分发给别人用」章节提到的 `build.js`、`dist/`、`install.html`、`version.json`、示例卷等构建/发行辅助文件**未包含在仓库内**（上游公开仓库亦未收录），需要时请自行重建或联系作者获取。
 
 把粉笔在线试卷（行测 / 申论）一键排成 A4 真卷：题号悬挂缩进、**屏幕上直接显示 A4 分页**、题目可跨页、申论可选答题格，支持直接打印或导出 PDF。
 
@@ -144,6 +151,8 @@
 
 ## 分发给别人用
 
+> 本节及下方 `dist/`、`分发说明.md` 等描述来自**上游作者的完整工程规划**，相关构建产物并未收录进公开仓库（详见顶部 Fork 说明）。当前仓库可直接使用的分发物是 `fenbi-print.user.js`（油猴导入）与 `index.html`（引导页/说明页）。
+
 `dist/` 目录是一份完整分发包，上传到你的静态托管即可：
 
 | 文件 | 作用 |
@@ -172,15 +181,16 @@ jsdom 模拟行测与申论页面实跑，**101 项检查全过**，覆盖：面
 | 文件 | 说明 |
 |---|---|
 | `fenbi-print.user.js` | 主脚本，装进油猴即用 |
-| `build.js` | 构建脚本，执行后生成 `dist/` 分发包 |
-| `dist/` | 完整分发包（install.html + 脚本 + version.json），上传静态托管即可 |
-| `分发说明.md` | 如何部署到 CloudBase、配 CORS、做更新 |
-| `示例-行测试卷.html` | 行测示意样例（10 题 + 2 材料）；第 6 题验证跨页，第 7 题验证一列一个，第 8 题验证填空线，第 9 题验证 AB/BC/CD/DA 保留，第 10 题验证图形题；使用了排版页封面 |
-| `示例-申论试卷.html` | 申论示意样例（2 材料 + 2 题），默认使用「按题目字数自动算」作答区；使用了排版页封面 |
+| `index.html` | 说明页 / 安装引导页（小书签 + 油猴安装 + 常见问题 + 更新日志） |
+| `README.md` | 本文档 |
+| `LICENSE` | MIT 协议（版权归原作者 zoij1033） |
+| `.gitignore` | Git 忽略规则 |
+
+> 注：README 前述章节（「分发给别人用」等）所提到的 `build.js`、`dist/`、`install.html`、`version.json`、`分发说明.md`、示例卷等文件，均**未包含在公开仓库中**（详见顶部 Fork 说明）。当前仓库实际可用的交付物为 `fenbi-print.user.js` 与 `index.html`。
 
 ## 版本号规则
 
-采用 `主.次.修订`（语义化版本）三段式，**只要动了脚本代码，就必须同步 `fenbi-print.user.js` 里的 `// @version` 与 `const VERSION`、以及 `install.html` 的当前版本标识和本文件更新记录**：
+采用 `主.次.修订`（语义化版本）三段式，**只要动了脚本代码，就必须同步 `fenbi-print.user.js` 里的 `// @version` 与 `const VERSION`、以及说明页 `index.html` 的当前版本标识和本文件更新记录**：
 
 | 位 | 何时升 | 例子 |
 |---|---|---|
@@ -191,6 +201,8 @@ jsdom 模拟行测与申论页面实跑，**101 项检查全过**，覆盖：面
 > **铁律**：哪怕只补一个函数、调一处样式，版本号也得 +1（通常升修订号）。否则「检查更新」比对到的还是同一个号，永远不会提示有新版本。v1.6.4 就是一次"改了代码却忘了 bump 版本"后的补正。
 
 ## 更新记录
+
+> 本文件更新记录维护至 v1.6.7（上游文档未继续跟进）；**v1.6.8 起的逐版本记录请见 `index.html` 的「更新日志」**（当前已同步至 v1.8.8）。本 fork 后续改动建议直接维护 `index.html` 更新日志。
 
 ### v1.6.7（2026-08-31）
 

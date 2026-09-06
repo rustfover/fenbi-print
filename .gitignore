@@ -1,0 +1,18 @@
+# ---- 系统/编辑器杂项 ----
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# ---- 本地测试/临时产物 ----
+*.log
+tmp/
+node_modules/
+
+# ---- 个人设置，不入库 ----
+# 说明页与脚本里出现的用户信息（如安装引导页的本地直连地址）若需定制，
+# 请复制为 *.local.* 再修改，避免污染上游 diff。

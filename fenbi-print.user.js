@@ -40,8 +40,8 @@
     // 现改为直接拉 GitHub API 取真实最新版（含完整脚本内容），下载也直接用 API 返回的内容就地重注入，彻底摆脱 CDN 滞后。
     // 仅当 GitHub API 不可达时，才回退到 jsDelivr @main 兜底（可能滞后，但总比没有强）。
     // 更新逻辑完全内建、硬编码，不依赖小书签代码——书签链接永远锁 @main，今后无需任何改动即可更新。
-    const GH_API = 'https://api.github.com/repos/zoij1033/fenbi-print/contents/fenbi-print.user.js?ref=main';
-    const UPDATE_FB_URL = 'https://cdn.jsdelivr.net/gh/zoij1033/fenbi-print@main/fenbi-print.user.js';
+    const GH_API = 'https://api.github.com/repos/rustfover/fenbi-print/contents/fenbi-print.user.js?ref=main';
+    const UPDATE_FB_URL = 'https://cdn.jsdelivr.net/gh/rustfover/fenbi-print@main/fenbi-print.user.js';
     // 旧版 version.json 托管方案已废弃
     const REMOTE = '';
 
